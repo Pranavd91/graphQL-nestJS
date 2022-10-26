@@ -10,7 +10,7 @@ import { BookModule } from './book/book.module';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       definitions: {
-       // path: join(process.cwd(), 'src/graphql.ts'),
+        path: join(process.cwd(), 'src/graphql.ts'),
       },
    //   debug: false,
       playground: true,
