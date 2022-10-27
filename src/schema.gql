@@ -14,13 +14,12 @@ type Query {
 }
 
 type Mutation {
-  deleteBookById(bookId: Int!): Book!
-  addBook(addBookArgs: AddBookArgs!): Book!
-  updateBook(updateBookArgs: UpdateBookArgs!): Book!
+  deleteBookById(bookId: Int!): String!
+  addBook(addBookArgs: AddBookArgs!): String!
+  updateBook(updateBookArgs: UpdateBookArgs!): String!
 }
 
 input AddBookArgs {
-  id: Int!
   title: String!
   price: Int!
 }
