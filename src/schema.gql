@@ -10,4 +10,23 @@ type Book {
 
 type Query {
   books: [Book!]!
+  findBookById(bookId: Int!): Book!
+}
+
+type Mutation {
+  deleteBookById(bookId: Int!): Book!
+  addBook(addBookArgs: AddBookArgs!): Book!
+  updateBook(updateBookArgs: UpdateBookArgs!): Book!
+}
+
+input AddBookArgs {
+  id: Int!
+  title: String!
+  price: Int!
+}
+
+input UpdateBookArgs {
+  id: Int!
+  title: String!
+  price: Int!
 }
