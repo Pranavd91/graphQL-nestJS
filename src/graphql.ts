@@ -26,7 +26,7 @@ export interface Book {
 }
 
 export interface IQuery {
-    books(): Book[] | Promise<Book[]>;
+    getAllBooks(): Book[] | Promise<Book[]>;
     findBookById(bookId: number): Book | Promise<Book>;
 }
 

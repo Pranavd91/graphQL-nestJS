@@ -9,7 +9,7 @@ type Book {
 }
 
 type Query {
-  books: [Book!]!
+  getAllBooks: [Book!]!
   findBookById(bookId: Int!): Book!
 }
 

@@ -10,7 +10,7 @@ import { BookEntity } from './entity/book.entity';
 export class BookResolver {
   constructor(private readonly bookservice: BookService) {}
 
-  @Query((returns) => [Book], { name: 'books' })
+  @Query((returns) => [Book], { name: 'getAllBooks' })
   getAllBooks() {
     return this.bookservice.getAllBooks();
   }
