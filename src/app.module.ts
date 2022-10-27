@@ -3,8 +3,11 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
+import { AuthModule } from './auth/auth.module';
 import { BookModule } from './book/book.module';
 import { BookEntity } from './book/entity/book.entity';
+import { UserEntity } from './user/entity/user.entity';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -14,7 +17,6 @@ import { BookEntity } from './book/entity/book.entity';
       definitions: {
         path: join(process.cwd(), 'src/graphql.ts'),
       },
-      //   debug: false,
       playground: true,
     }),
     TypeOrmModule.forRoot({
@@ -26,11 +28,13 @@ import { BookEntity } from './book/entity/book.entity';
       database: 'db1',
       synchronize: true,
       // logging: true,
-      entities: [BookEntity],
+      entities: [BookEntity,UserEntity],
       // subscribers: [],
       // migrations: [],
     }),
     BookModule,
+    UserModule,
+    AuthModule
   ],
 })
 export class AppModule {}

@@ -4,7 +4,6 @@ import { Book as BookModel } from '../graphql';
 import { BookService } from './book.service';
 import { AddBookArgs } from './args/add.book.args';
 import { UpdateBookArgs } from './args/update.book.args';
-import { BookEntity } from './entity/book.entity';
 
 @Resolver((of) => Book)
 export class BookResolver {

@@ -28,6 +28,8 @@ export interface Book {
 export interface IQuery {
     getAllBooks(): Book[] | Promise<Book[]>;
     findBookById(bookId: number): Book | Promise<Book>;
+    login(email: string, password: string): string | Promise<string>;
+    securedResource(): string | Promise<string>;
 }
 
 export interface IMutation {
